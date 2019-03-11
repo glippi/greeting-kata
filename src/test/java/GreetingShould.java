@@ -11,4 +11,8 @@ public class GreetingShould {
         assertThat(greeting.greet("Bob"), is("Hello, Bob."));
     }
 
+    @Test
+    public void greet_hello_friend_when_name_is_null() {
+        assertThat(greeting.greet(null), is("Hello, my friend."));
+    }
 }
