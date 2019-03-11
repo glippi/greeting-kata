@@ -1,8 +1,12 @@
 public class Greeting {
     public static String greet(String name) {
         if (name == null) return "Hello, my friend.";
-        if(name.toUpperCase().equals(name))
-            return "HELLO " + name.toUpperCase() + "!";
+        if(isUppercaseName(name))
+            return "HELLO " + name + "!";
         return "Hello, Bob.";
+    }
+
+    private static boolean isUppercaseName(String name) {
+        return name.toUpperCase().equals(name);
     }
 }
