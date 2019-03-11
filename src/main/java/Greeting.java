@@ -9,7 +9,7 @@ public class Greeting {
     }
 
     public static String greet(List<String> names) {
-        return null;
+        return "Hello, " + names.get(0) + " and " + names.get(1) + ".";
     }
 
     private static boolean isUppercaseName(String name) {
