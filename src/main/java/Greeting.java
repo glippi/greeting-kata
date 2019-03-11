@@ -2,10 +2,8 @@ import java.util.List;
 
 class Greeting {
     static String greet(String name) {
-        if (name == null) return "Hello, my friend.";
-        if(isUppercaseName(name))
-            return "HELLO " + name + "!";
-        return "Hello, Bob.";
+        if (name == null) return generateGreeting("my friend");
+        return generateGreeting(name);
     }
 
     static String greet(List<String> names) {
@@ -15,13 +13,19 @@ class Greeting {
 
         for (String name : names) {
             if (names.indexOf(name) == names.size() - 1) {
-                greetingMultiple.append("and " + name + ".");
+                greetingMultiple.append("and " + name );
                 break;
             }
             greetingMultiple.append(name + ", ");
         }
 
-        return "Hello, " + greetingMultiple.toString();
+        return generateGreeting(greetingMultiple.toString());
+    }
+
+    private static String generateGreeting(String names) {
+        if(isUppercaseName(names))
+            return "HELLO " + names + "!";
+        return "Hello, " + names + ".";
     }
 
     private static boolean isUppercaseName(String name) {
