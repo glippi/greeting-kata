@@ -25,4 +25,9 @@ public class GreetingShould {
     public void greet_two_people_for_a_list_of_names() {
         assertThat(Greeting.greet(asList("Jill", "Jane")), is("Hello, Jill and Jane."));
     }
+
+    @Test
+    public void greet_more_than_two_people_for_a_list_of_names() {
+        assertThat(Greeting.greet(asList("Amy", "Brian", "Charlotte")), is("Hello, Amy, Brian, and Charlotte."));
+    }
 }
